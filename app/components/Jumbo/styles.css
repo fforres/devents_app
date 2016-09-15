@@ -1,0 +1,6 @@
+.container {
+  background-image: url(./images/santiago-compressor.jpg); /* TODO: Change image */
+  background-attachment: fixed;
+  padding: 7em 0;
+  color: white;
+}

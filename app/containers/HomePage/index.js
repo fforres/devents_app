@@ -13,13 +13,16 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
+import Jumbo from 'components/Jumbo';
+
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (
-      <h1>
+      <div>
+        <Jumbo />
         <FormattedMessage {...messages.header} />
-      </h1>
+      </div>
     );
   }
 }
