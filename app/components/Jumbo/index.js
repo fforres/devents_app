@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Banner, Heading } from 'rebass';
 
 import styles from './styles.css';
+import image from './images/santiago-compressor.jpg';
 
 export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -10,9 +12,24 @@ export default class App extends Component { // eslint-disable-line react/prefer
 
   render() {
     return (
-      <div className={styles.container}>
-        <h1> :D </h1>
-      </div>
+      <Banner
+        align="center"
+        style={{ minHeight: '19em', margin: 0, padding: '3em' }}
+        backgroundImage={image}
+      >
+        <Heading
+          level={1}
+          size={0}
+        >
+          DEV-entos
+        </Heading>
+        <Heading
+          level={3}
+          size={3}
+        >
+          Encuentra eventos para desarrolladores cerca de ti :)
+        </Heading>
+      </Banner>
     );
   }
 }

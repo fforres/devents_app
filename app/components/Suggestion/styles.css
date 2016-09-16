@@ -1,0 +1,12 @@
+.suggestion { /* stylelint-disable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: black;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 25em;
+}

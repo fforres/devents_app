@@ -1,0 +1,5 @@
+.eventFilter { /* stylelint-disable */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
