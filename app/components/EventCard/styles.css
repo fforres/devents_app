@@ -39,11 +39,20 @@
   justify-content: center;
 }
 
-.bodySubTitle{
-  margin-top: 0.5em;
+.bodySubTitle {
+  margin-top: 1em;
   font-size: 0.8em;
 }
 
+.bodySubTitleContent {
+  height: 6.6em;
+}
+
+.divider {
+  border-color: rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.29);
+  border-width: 1px;
+}
 .subTitleIcon {
   vertical-align: sub;
   margin-right: 1em;
