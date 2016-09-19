@@ -12,7 +12,7 @@ import {
   FETCH_EVENTS_SUCCEDED,
 } from './constants';
 
-const initialState = fromJS({
+export const initialState = fromJS({
   loading: false,
   error: false,
   events: [],

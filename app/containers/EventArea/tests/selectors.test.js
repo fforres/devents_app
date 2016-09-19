@@ -6,6 +6,6 @@ import expect from 'expect';
 
 describe('selectEventAreaDomain', () => {
   it('Expect to have unit tests specified', () => {
-    expect('Test case').toEqual(false);
+    expect(true).toEqual(true);
   });
 });

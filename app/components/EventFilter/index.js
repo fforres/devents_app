@@ -25,7 +25,7 @@ class EventFilter extends React.Component { // eslint-disable-line react/prefer-
               className={styles.facebookIcon}
             />
             <span>
-            DEV-entos
+            Próximos Eventos
             </span>
           </Heading>
           <Select
