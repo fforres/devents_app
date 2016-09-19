@@ -5,6 +5,8 @@
 */
 
 import React, { Component, PropTypes } from 'react';
+import { ButtonOutline, ButtonCircle } from 'rebass';
+
 import moment from 'moment';
 import 'moment/min/locales.min';
 const a = moment.locale('es');
@@ -86,8 +88,18 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
                 { address }
               </div>
             </div>
-            <hr className={styles.divider}/>
+            <hr className={styles.divider} />
             <div>
+              <ButtonOutline
+                color="success"
+                pill
+                style={{
+                  fontSize: '0.6em',
+                  minHeight: '2em',
+                }}
+              >
+                ✔ text
+              </ButtonOutline>
 
             </div>
           </div>

@@ -11,8 +11,8 @@
 
 import React from 'react';
 
-// import Jumbo from 'components/Jumbo';
-// import Suggestion from 'components/Suggestion';
+import Jumbo from 'components/Jumbo';
+import Suggestion from 'components/Suggestion';
 import EventArea from 'containers/EventArea';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -20,8 +20,8 @@ export default class HomePage extends React.Component { // eslint-disable-line r
   render() {
     return (
       <div>
-        {/* <Jumbo />
-        <Suggestion /> */}
+        <Jumbo />
+        <Suggestion />
         <EventArea />
       </div>
     );
