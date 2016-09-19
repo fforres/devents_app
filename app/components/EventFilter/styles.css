@@ -1,5 +1,15 @@
 .eventFilter { /* stylelint-disable */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filter {
+  min-width: 10em;
 }

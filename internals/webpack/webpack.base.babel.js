@@ -37,6 +37,9 @@ module.exports = (options) => ({
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
     }, {
+      test: /\.less/,
+      loaders: ['style-loader', 'css-loader', 'less-loader'],
+    }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {
@@ -54,7 +57,8 @@ module.exports = (options) => ({
     }, {
       test: /\.(mp4|webm)$/,
       loader: 'url-loader?limit=10000',
-    }],
+    },
+  ],
   },
   plugins: options.plugins.concat([
     new webpack.ProvidePlugin({

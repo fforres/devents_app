@@ -7,8 +7,7 @@
 import React from 'react';
 import { Button, Section } from 'rebass';
 
-import styles from './styles.css';
-console.log(styles.suggestion);
+// import styles from './styles.css';
 class Suggestion extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (

@@ -16,7 +16,7 @@ class EventArea extends React.Component { // eslint-disable-line react/prefer-st
     return (
       <Section
         p={2}
-        backgroundColor={'lightgrey'}
+        backgroundColor={'rgb(229, 229, 229)'}
       >
         <EventFilter />
         <EventList
