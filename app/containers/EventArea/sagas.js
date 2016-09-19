@@ -25,6 +25,7 @@ function* fetchEvents() {
           }
           venue {
             city
+            address
             name
           }
         }

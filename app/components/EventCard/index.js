@@ -5,8 +5,12 @@
 */
 
 import React, { Component, PropTypes } from 'react';
+import moment from 'moment';
+import 'moment/min/locales.min';
+const a = moment.locale('es');
 
 import styles from './styles.css';
+import Icon from 'components/Icon';
 
 class EventCard extends Component { // eslint-disable-line react/prefer-stateless-function
   checkImage() {
@@ -26,7 +30,23 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
           style={imageStyle}
         />
         <div className={styles.body}>
-          <div className={styles.bodyTitle}>{this.props.group.name}</div>
+          <div className={styles.bodyTitle}><span>{this.props.group.name}</span></div>
+          <div className={styles.bodySubTitle}>
+            <div className={styles.inline}>
+              <Icon
+                name="calendar"
+                className={styles.subTitleIcon}
+              />
+              <span className={styles.subTitleText}>{moment(this.props.time, 'x').format('DD [de] MMMM [del] YYYY [a las] hh:mm a')}</span>
+            </div>
+            <div className={styles.inline}>
+              <Icon
+                name="map-marker"
+                className={styles.subTitleIcon}
+              />
+              <span className={styles.subTitleText}>{this.props.venue && this.props.venue.address ? this.props.venue.address : 'No hay un lugar aún'}</span>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -50,6 +70,7 @@ EventCard.propTypes = {
   }).isRequired,
   venue: PropTypes.shape({
     city: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }),
 };
