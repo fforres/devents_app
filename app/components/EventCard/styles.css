@@ -1,10 +1,15 @@
 .eventCard { /* stylelint-disable */
-  width: 17em;
-  height: 20em;
+  width: 20em;
+  height: 24em;
   margin: 1em;
   background-color: white;
+  box-shadow: 2px 2px 10px #8f8f8F;
 }
-
+.inline {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.3em;
+}
 .header {
   /*
   background-attachment: fixed;
@@ -12,7 +17,7 @@
   */
   background-attachment: inherit;
   background-size: cover;
-  height: 5em;
+  height: 6em;
   background-position: center center;
 }
 
@@ -21,8 +26,38 @@
   margin-right: 1em;
   text-align: left;
 }
+
 .bodyTitle{
-  margin-top: 1em;
+  padding-top: 0.5em;
   height: 3.3em;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
+  align-content: center;
+  justify-content: center;
+}
+
+.bodySubTitle {
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+
+.bodySubTitleContent {
+  height: 6.6em;
+}
+
+.divider {
+  border-color: rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.29);
+  border-width: 1px;
+}
+.subTitleIcon {
+  vertical-align: sub;
+  margin-right: 1em;
+}
+
+.subTitleText {
+  text-transform: capitalize;
 }

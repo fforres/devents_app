@@ -29,6 +29,7 @@ const ReactBoilerplate = {
         'minimist',
         'sanitize.css',
         'font-awesome',
+        'moment',
       ],
 
       /**

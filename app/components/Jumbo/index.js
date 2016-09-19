@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Banner, Heading } from 'rebass';
 
 // import styles from './styles.css';
-import image from './images/santiago-compressor.jpg';
+import image from './images/santiago1.jpg';
 
 export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
 

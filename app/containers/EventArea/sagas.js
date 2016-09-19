@@ -17,7 +17,7 @@ function* fetchEvents() {
           assistants_limit
           assistants_current
           name
-          plain_text_description
+          link
           group {
             name
             hires_photo
@@ -25,6 +25,9 @@ function* fetchEvents() {
           }
           venue {
             city
+            address
+            lat
+            lon
             name
           }
         }
@@ -36,7 +39,17 @@ function* fetchEvents() {
     if (events.errors) {
       throw new Error(events.errors);
     } else {
-      yield put(fetchEventsSucceded(events.data.events));
+      const sorted = events.data.events.sort((a, b) => {
+        if (a.last_nom < b.last_nom) {
+          return -1;
+        }
+        if (a.last_nom > b.last_nom) {
+          return 1;
+        }
+        return 0;
+      });
+
+      yield put(fetchEventsSucceded(sorted));
     }
   } catch (e) {
     yield put(fetchEventsFailed());
