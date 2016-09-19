@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import 'font-awesome-webpack2';
+import 'font-awesome/css/font-awesome.css';
 
 import styles from './styles.css';
 

@@ -11,8 +11,6 @@ import Icon from 'components/Icon';
 import styles from './styles.css';
 
 class EventFilter extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  componentDidMount() {
-  }
   render() {
     return (
       <div className={styles.eventFilter}>

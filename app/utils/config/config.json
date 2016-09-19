@@ -1,0 +1,12 @@
+{
+  "development": {
+    "graphQlApi": {
+      "url": "http://localhost:3009/graphql"
+    }
+  },
+  "production": {
+    "graphQlApi": {
+      "url": "http://api.coworks.cl"
+    }
+  }
+}
