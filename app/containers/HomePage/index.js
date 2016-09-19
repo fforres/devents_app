@@ -13,7 +13,7 @@ import React from 'react';
 
 import Jumbo from 'components/Jumbo';
 import Suggestion from 'components/Suggestion';
-import EventArea from 'components/EventArea';
+import EventArea from 'containers/EventArea';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

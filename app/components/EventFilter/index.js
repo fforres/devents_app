@@ -5,7 +5,8 @@
 */
 
 import React from 'react';
-import { Heading, Icon } from 'rebass';
+import { Heading, Input, Select } from 'rebass';
+import Icon from 'components/Icon';
 
 import styles from './styles.css';
 
@@ -13,23 +14,52 @@ class EventFilter extends React.Component { // eslint-disable-line react/prefer-
   render() {
     return (
       <div className={styles.eventFilter}>
-        <div>
-          <Icon
-            fill="currentColor"
-            height="1em"
-            name="heart"
-            width="1em"
-          />
+        <div className={styles.leftSide}>
           <Heading
             level={1}
             size={3}
+            style={{ marginRight: '1em' }}
           >
+            <Icon
+              name="calendar"
+              className={styles.facebookIcon}
+            />
             <span>
-            DEV-entos
+            Próximos Eventos
             </span>
           </Heading>
+          <Select
+            className={styles.filter}
+            label="Ordenar"
+            name="order"
+            onChange={(e, data) => {
+              console.log(e);
+              console.log(data);
+              console.log(this);
+            }}
+            options={[{
+              children: 'Fecha',
+              value: 'date',
+            }]}
+            hideLabel
+            type="select"
+          />
         </div>
         <div>
+          <Input
+            label="Buscar"
+            name="search"
+            placeholder="Filtrar"
+            rounded
+            autoOff
+            onChange={(e, data) => {
+              console.log(e);
+              console.log(data);
+              console.log(this);
+            }}
+            hideLabel
+            type="text"
+          />
         </div>
       </div>
     );

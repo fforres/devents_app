@@ -23,11 +23,16 @@ export default function createRoutes(store) {
       getComponent(nextState, cb) {
         const importModules = Promise.all([
           System.import('containers/HomePage'),
+          System.import('containers/EventArea/reducer'),
+          System.import('containers/EventArea/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([component, reducerEventArea, sagasEventArea]) => {
+          injectReducer('eventArea', reducerEventArea.default);
+          injectSagas(sagasEventArea.default);
+
           renderRoute(component);
         });
 

@@ -1,3 +1,28 @@
 .eventCard { /* stylelint-disable */
+  width: 17em;
+  height: 20em;
+  margin: 1em;
+  background-color: white;
+}
 
+.header {
+  /*
+  background-attachment: fixed;
+  background-size: contain;
+  */
+  background-attachment: inherit;
+  background-size: cover;
+  height: 5em;
+  background-position: center center;
+}
+
+.body {
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: left;
+}
+.bodyTitle{
+  margin-top: 1em;
+  height: 3.3em;
+  text-align: left;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Banner, Heading } from 'rebass';
 
-import styles from './styles.css';
+// import styles from './styles.css';
 import image from './images/santiago-compressor.jpg';
 
 export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -14,7 +14,7 @@ export default class App extends Component { // eslint-disable-line react/prefer
     return (
       <Banner
         align="center"
-        style={{ minHeight: '19em', margin: 0, padding: '3em' }}
+        style={{ minHeight: '19em', margin: 0, padding: '3em', backgroundAttachment: 'fixed' }}
         backgroundImage={image}
       >
         <Heading
