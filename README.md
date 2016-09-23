@@ -9,6 +9,8 @@ El proyecto está realizado en React. (Está conectado a un .json de data dummy 
 - `clonar el repo`
 - `npm install`
 - `npm start`
+- Abrir [localhost:3000](http:///localhost:3000)
+- Desarrollar
 
 ## Descripción de los componentes de los componentes.
 
