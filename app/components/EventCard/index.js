@@ -5,7 +5,7 @@
 */
 
 import React, { Component, PropTypes } from 'react';
-import { ButtonOutline, ButtonCircle } from 'rebass';
+import { Button, ButtonOutline } from 'rebass';
 
 import moment from 'moment';
 import 'moment/min/locales.min';
@@ -29,10 +29,10 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
             target="_blank"
             href={`http://maps.google.com/maps?t=m&q=loc:${this.props.venue.lat}+${this.props.venue.lon}`}
             className={styles.subTitleText}
-          >{this.props.venue.address}</a>
+          >{this.props.venue.city} - {this.props.venue.address}</a>
         );
       }
-      return (<span className={styles.subTitleText}>{this.props.venue.address}</span>);
+      return (<span className={styles.subTitleText}>{this.props.venue.city} {this.props.venue.address}</span>);
     }
     return (<span className={styles.subTitleText}>No hay un lugar aún</span>);
   }
@@ -48,12 +48,40 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
     }
     return (<span className={styles.subTitleText}>{this.props.name}</span>);
   }
+  checkFee() {
+    if (this.props.fee) {
+      return (
+        <div className={styles.bodyFooterText}>
+          <Icon name="money" />
+          <span>{this.props.fee}</span>
+        </div>
+      );
+    }
+    return (
+      <div className={styles.bodyFooterText}>
+        <Icon name="money" />
+        <span>Gratis</span>
+      </div>
+    );
+  }
+  checkAssistants() {
+    return (
+      <div className={styles.bodyFooterText}>
+        <Icon name="users" />
+        <span>
+          {`${this.props.assistants_current} ${this.props.group.assistants_nickname}`}
+        </span>
+      </div>
+    );
+  }
   render() {
     const imageStyle = {
       backgroundImage: this.checkImage(),
     };
     const address = this.checkAddress();
     const event = this.checkEventLink();
+    const fee = this.checkFee();
+    const assistants = this.checkAssistants();
     return (
       <div className={styles.eventCard}>
         <div
@@ -78,7 +106,9 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
                   name="calendar"
                   className={styles.subTitleIcon}
                 />
-                <span className={styles.subTitleText}>{moment(this.props.time, 'x').format('DD [de] MMM [del] YYYY [a las] hh:mm a')}</span>
+                <span className={styles.subTitleText}>
+                  {moment(this.props.time, 'x').format('DD [de] MMM [del] YYYY [a las] hh:mm a')}
+                </span>
               </div>
               <div className={styles.inline}>
                 <Icon
@@ -88,21 +118,31 @@ class EventCard extends Component { // eslint-disable-line react/prefer-stateles
                 { address }
               </div>
             </div>
-            <hr className={styles.divider} />
-            <div>
-              <ButtonOutline
-                color="success"
-                pill
-                style={{
-                  fontSize: '0.6em',
-                  minHeight: '2em',
-                }}
-              >
-                ✔ text
-              </ButtonOutline>
-
+            <div className={styles.as}>
+              Agregar a: <br />
+              <div className={styles.buttonArea}>
+                <ButtonOutline
+                  color="primary"
+                  rounded
+                >
+                  <Icon name="google" />
+                  Gmail
+                </ButtonOutline>
+                <ButtonOutline
+                  color="primary"
+                  rounded
+                >
+                  <Icon name="apple" />
+                  iCal
+                </ButtonOutline>
+              </div>
             </div>
+
           </div>
+        </div>
+        <div className={styles.bodyFooter}>
+          { assistants }
+          { fee }
         </div>
       </div>
     );
@@ -115,7 +155,6 @@ EventCard.propTypes = {
   assistants_limit: PropTypes.number,
   assistants_current: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  plain_text_description: PropTypes.string.isRequired,
   utc_offset: PropTypes.string,
   fee: PropTypes.string,
   link: PropTypes.string,
@@ -123,6 +162,7 @@ EventCard.propTypes = {
     name: PropTypes.string.isRequired,
     hires_photo: PropTypes.string,
     photo: PropTypes.string,
+    assistants_nickname: PropTypes.string.isRequired,
   }).isRequired,
   venue: PropTypes.shape({
     city: PropTypes.string.isRequired,
