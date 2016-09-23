@@ -1,7 +1,6 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import { get } from 'utils/graphql';
-
+import { get, fakeApi } from 'utils/graphql';
 import { fetchEventsFailed, fetchEventsSucceded } from './actions';
 import { FETCH_EVENTS_REQUESTED } from './constants';
 
@@ -57,8 +56,25 @@ function* fetchEvents() {
   }
 }
 
+function* fetchFakeEvents() {
+  const sorted = fakeApi.data.events.sort((a, b) => {
+    if (a.last_nom < b.last_nom) {
+      return -1;
+    }
+    if (a.last_nom > b.last_nom) {
+      return 1;
+    }
+    return 0;
+  });
+  yield put(fetchEventsSucceded(sorted));
+}
+
 export function* defaultSaga() {
-  yield* takeLatest(FETCH_EVENTS_REQUESTED, fetchEvents);
+  let apiCall = fetchEvents;
+  if (process.env.NODE_ENV === 'development') {
+    apiCall = fetchFakeEvents; // TODO: Find better suited option
+  }
+  yield* takeLatest(FETCH_EVENTS_REQUESTED, apiCall);
   return;
 }
 

@@ -1,4 +1,5 @@
 import config from 'utils/config';
+export fakeApi from './fakeApi.json';
 
 export const get = (queryString) => {
   const searchQuery = new URL(config.graphQlApi.url);
