@@ -22,6 +22,7 @@ function* fetchEvents() {
             name
             hires_photo
             photo
+            assistants_nickname
           }
           venue {
             city

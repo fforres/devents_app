@@ -3,6 +3,8 @@
   height: 24em;
   margin: 1em;
   background-color: white;
+  position: relative;
+  border-radius: 0.3em;
   box-shadow: 2px 2px 10px #8f8f8F;
 }
 .inline {
@@ -15,7 +17,9 @@
   background-attachment: fixed;
   background-size: contain;
   */
-  background-attachment: inherit;
+  border-top-right-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  background-attachment: local;
   background-size: cover;
   height: 6em;
   background-position: center center;
@@ -45,14 +49,38 @@
 }
 
 .bodySubTitleContent {
-  height: 6.6em;
+  height: 8em;
+}
+.buttonArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
 }
 
-.divider {
-  border-color: rgb(255, 255, 255);
-  border-color: rgba(255, 255, 255, 0.29);
-  border-width: 1px;
+.bodyFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border-top-color: rgb(230, 230, 230);
+  border-top-width: 1px;
+  border-top-style: solid;
+  position: absolute;
+  bottom: 0;
+  height: 3em;
+  width: 100%;
 }
+
+.bodyFooterText {
+  font-size: 0.7em;
+  color: rgb(170, 170, 170);
+}
+
+.bodyFooterText span {
+  padding: 0.5em;
+}
+
 .subTitleIcon {
   vertical-align: sub;
   margin-right: 1em;
