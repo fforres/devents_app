@@ -4,7 +4,7 @@
   "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fforres/dev-vents.git"
+    "url": "git://github.com/fforres/devents_app.git"
   },
   "engines": {
     "npm": ">=3"

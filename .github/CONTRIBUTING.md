@@ -8,7 +8,7 @@ Following these guidelines helps to communicate that you respect the time of the
 
 ## Using the issue tracker
 
-The [issue tracker](https://github.com/fforres/dev-vents) is the preferred channel for [bug reports](#bugs), [features requests](#features) and [submitting pull requests](#pull-requests).
+The [issue tracker](https://github.com/fforres/devents_app) is the preferred channel for [bug reports](#bugs), [features requests](#features) and [submitting pull requests](#pull-requests).
 
 []()
 
@@ -42,11 +42,11 @@ Adhering to the following process is the best way to get your work included in t
 
   ```bash
   # Clone your fork of the repo into the current directory
-  git clone https://github.com/<your-username>/dev-vents.git
+  git clone https://github.com/<your-username>/devents_app.git
   # Navigate to the newly cloned directory
-  cd dev-vents
+  cd devents_app
   # Assign the original repo to a remote called "upstream"
-  git remote add upstream https://github.com/fforres/dev-vents.git
+  git remote add upstream https://github.com/fforres/devents_app.git
   ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
@@ -78,4 +78,4 @@ Adhering to the following process is the best way to get your work included in t
 
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/) with a clear title and description.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/fforres/dev-vents/blob/master/LICENSE.md).
+**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/fforres/devents_app/blob/master/LICENSE.md).
