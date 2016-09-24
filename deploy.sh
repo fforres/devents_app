@@ -63,14 +63,14 @@ echo $ENCRYPTED_KEY
 echo $ENCRYPTED_IV
 
 echo "OPENSSL"
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in github_pages_deploy.enc -out github_pages_deploy -d
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in devents_gh_deploy_key.enc -out devents_gh_deploy_key -d
 
 echo "chmod 600"
-chmod 600 github_pages_deploy
+chmod 600 devents_gh_deploy_key
 eval `ssh-agent -s`
 
 echo "SSH-ADD"
-ssh-add github_pages_deploy
+ssh-add devents_gh_deploy_key
 
 
 
