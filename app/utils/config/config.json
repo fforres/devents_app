@@ -6,7 +6,7 @@
   },
   "production": {
     "graphQlApi": {
-      "url": "http://api.coworks.cl"
+      "url": "http://api.devents.noders.com"
     }
   }
 }

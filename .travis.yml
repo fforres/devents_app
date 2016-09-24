@@ -1,18 +1,28 @@
+sudo: false
 language: node_js
-sudo: true
-dist: trusty
 node_js:
-  - "5.0"
-script: npm run build
+- 6
+addons:
+  ssh_known_hosts: noders.com
 before_install:
-  - export CHROME_BIN=/usr/bin/google-chrome
+  - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
-  - sudo apt-get update
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
   - sh -e /etc/init.d/xvfb start
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: npm run build
+  on:
+    branch: master
+after_deploy:
+- bash ./deploy.sh
+- rm github_pages_deploy
 notifications:
   email:
     on_failure: change
-after_success: 'npm run coveralls'
+after_script:
+- echo "--------------------------------"
+- echo "--------- DEPLOY DONE! ---------"
+- echo "--------------------------------"
+dd:
+- openssl aes-256-cbc -K $encrypted_54caf6efb586_key -iv $encrypted_54caf6efb586_iv -in devents_gh_deploy_key.enc -out devents_gh_deploy_key -d

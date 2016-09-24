@@ -5,7 +5,7 @@
 */
 
 import React, { Component, PropTypes } from 'react';
-import { Button, ButtonOutline } from 'rebass';
+import { ButtonOutline } from 'rebass';
 
 import moment from 'moment';
 import 'moment/min/locales.min';
